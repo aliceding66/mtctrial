@@ -1,0 +1,9 @@
+<Files ~ "\.(jpg|jpeg|png|gif|bmp|zip)$">
+    Order allow,deny  
+	Allow from all
+</FILES>
+
+<Files ~ "\.ini$">
+	Order allow,deny
+	Deny from all
+</Files>
