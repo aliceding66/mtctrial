@@ -1,3 +1,5 @@
+<?php
+
 require 'properties.config';
 
 // Create connection
@@ -9,9 +11,6 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully";
 
-
-
-$api_key = '3NLTTNlXsi6rBWl7nYGluOdkl2htFHug';
 $i = 1;
 
 $json = file_get_contents('http://trialapi.craig.mtcdevserver.com/api/properties?api_key='.$api_key.'&page[number]='.$i); 
@@ -39,3 +38,5 @@ do {
 } while (!is_null($data->next_page_url))
 
 mysqli_close($conn);
+
+?>
