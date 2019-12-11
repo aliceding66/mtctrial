@@ -1,8 +1,4 @@
 <?php
-
-/* Ex.: 'datagrid/' or '../datagrid/' */
-define ('DATAGRID_DIR', '');                             
-require_once(DATAGRID_DIR.'datagrid.class.php'); 
  
 ## +---------------------------------------------------------------------------+
 ## | 1. Creating & Calling:                                                    |
@@ -10,7 +6,7 @@ require_once(DATAGRID_DIR.'datagrid.class.php');
 ##  *** define a relative (virtual) path to datagrid.class.php file
 ##  *** directory (relatively to the current file)
 ##  *** RELATIVE PATH ONLY ***
-define ("DATAGRID_DIR", "datagrid/");                    
+define ("DATAGRID_DIR", "..／PHPDG/datagrid/");                    
 require_once(DATAGRID_DIR."datagrid.class.php");
  
 ##  *** creating variables that we need for database connection    
@@ -24,19 +20,19 @@ $dgrid = new DataGrid($debug_mode, $messaging, $unique_prefix);
  
 ##  *** put a primary key on the first place
 $sql=" SELECT "
- ."demo_countries.uuid, "
- ."demo_countries.county as county_name, "
- ."demo_regions.country as country_name, "
- ."demo_countries.town as town_name, "
- ."demo_countries.postcode as postcode_name, "
- ."demo_countries.description, "
- ."demo_countries.address as address_name, "
- ."demo_countries.image_full as picture_url, "
- ."demo_countries.bedroom as num_bedrooms, "
- ."demo_countries.bathroom as num_bathrooms, "
- ."demo_countries.price as price_value, "
- ."demo_countries.property_type as property_type, "  
- ."demo_countries.sale_rent as sale_rent "
+ ."Properties.uuid, "
+ ."Properties.county as county_name, "
+ ."Properties.country as country_name, "
+ ."Properties.town as town_name, "
+ ."Properties.postcode as postcode_name, "
+ ."Properties.description, "
+ ."Properties.address as address_name, "
+ ."Properties.image_full as picture_url, "
+ ."Properties.bedroom as num_bedrooms, "
+ ."Properties.bathroom as num_bathrooms, "
+ ."Properties.price as price_value, "
+ ."Properties.property_type as property_type, "  
+ ."Properties.sale_rent as sale_rent "
  ."FROM Properties";
  
 ##  *** set data source with needed options
@@ -75,7 +71,7 @@ $dgrid->SetCssClass("default");
 $anotherDatagrids = array("fp_"=>array("view"=>false, "edit"=>true, "details"=>true));
 $dgrid->SetAnotherDatagrids($anotherDatagrids);  
 ##  *** set DataGrid caption
-$dg_caption = "<b>Simple ApPHP DataGrid</b>";
+$dg_caption = "<b>Properties List</b>";
 $dgrid->SetCaption($dg_caption);
  
 ## +---------------------------------------------------------------------------+
