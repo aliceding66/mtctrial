@@ -16,8 +16,10 @@ function my_custom_menu_page(){
   ##  *** define a relative (virtual) path to datagrid.class.php file
   ##  *** directory (relatively to the current file)
   ##  *** RELATIVE PATH ONLY ***
-  define ("DATAGRID_DIR", "/PHPDG/datagrid/");                    
-  require_once(get_template_directory().DATAGRID_DIR."datagrid.class.php");
+  define ("DATAGRID_DIR", "PHPDG/datagrid/");  
+  define ("DATAGRID_DIR2",get_template_directory_uri()."/PHPDG/datagrid/");
+  
+  require_once(get_template_directory()."/".DATAGRID_DIR."datagrid.class.php");
     
   ##  *** creating variables that we need for database connection    
   require get_template_directory().'/properties.config';   

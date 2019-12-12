@@ -458,7 +458,7 @@ class DataGrid
 		$this->securityLevel = 'medium'; // low|medium/high
 		
 		// directory -----------------------------------------------------------
-		$this->directory = DATAGRID_DIR;
+		$this->directory = DATAGRID_DIR2;
 		
 		// language ------------------------------------------------------------
 		$this->langName = 'en';
@@ -831,7 +831,9 @@ class DataGrid
 				$db_conn = new PDO('sqlsrv:Server='.$DB_HOST.$DB_PORT.';Database='.$DB_NAME, $DB_USER, $DB_PASS);
 			}else{
 				$db_conn = new PDO($db_driver.':host='.$DB_HOST.';dbname='.$DB_NAME, $DB_USER, $DB_PASS);
+
 			}
+			
 			$this->dbHandler = $db_conn;
 			$this->dbHandler->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->DataSourceOld($this->dbHandler, $sql, $default_order);
